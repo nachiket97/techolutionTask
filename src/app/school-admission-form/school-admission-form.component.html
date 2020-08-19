@@ -1,0 +1,41 @@
+<h1 class="bd-title" id="content">User Registration Form</h1>
+<br/>
+<form *ngIf="userRegistrationFormGroup" [formGroup]="userRegistrationFormGroup">
+<div class="form-group">
+    <label> Name</label>
+    <input type="text" formControlName="name" class="form-control"  />
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.name.errors && userRegistrationFormGroup.controls.name.errors.required">{{userRegistrationFormGroup.controls.name.errors.required.message}}<br/></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.name.errors && userRegistrationFormGroup.controls.name.errors.alpha">{{userRegistrationFormGroup.controls.name.errors.alpha.message}}<br></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.name.errors && userRegistrationFormGroup.controls.name.errors.maxLength">{{userRegistrationFormGroup.controls.name.errors.maxLength.message}}<br/></small>
+</div>
+
+<div class="form-group">
+    <label>Last Name</label>
+    <input type="text" formControlName="lastName" class="form-control"  />
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.lastName.errors && userRegistrationFormGroup.controls.lastName.errors.required">{{userRegistrationFormGroup.controls.lastName.errors.required.message}}<br/></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.lastName.errors && userRegistrationFormGroup.controls.lastName.errors.alpha">{{userRegistrationFormGroup.controls.lastName.errors.alpha.message}}<br></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.lastName.errors && userRegistrationFormGroup.controls.lastName.errors.maxLength">{{userRegistrationFormGroup.controls.lastName.errors.maxLength.message}}<br/></small>
+</div>
+
+<div class="form-group">
+    <label>Class</label>
+    <input type="text" formControlName="class" class="form-control"  />
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.class.errors && userRegistrationFormGroup.controls.class.errors.required">{{userRegistrationFormGroup.controls.class.errors.required.message}}<br/></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.class.errors && userRegistrationFormGroup.controls.class.errors.alphaNumeric">{{userRegistrationFormGroup.controls.class.errors.alphaNumeric.message}}<br/></small>
+</div>
+
+<div class="form-group">
+    <label>Year Of Passing</label>
+    <input type="number" formControlName="YearOfPassing" class="form-control"  />
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.YearOfPassing.errors && userRegistrationFormGroup.controls.YearOfPassing.errors.required">{{userRegistrationFormGroup.controls.YearOfPassing.errors.required.message}}</small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.YearOfPassing.errors && userRegistrationFormGroup.controls.YearOfPassing.errors.greaterThan">{{userRegistrationFormGroup.controls.YearOfPassing.errors.greaterThan.message}}<br/></small>
+</div>
+
+<div class="form-group">
+    <label>Percentage of Marks</label>
+    <input type="text" formControlName="PercentageOfMarks" class="form-control"  />
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.PercentageOfMarks.errors && userRegistrationFormGroup.controls.PercentageOfMarks.errors.required">{{userRegistrationFormGroup.controls.PercentageOfMarks.errors.required.message}}<br/></small>
+    <small class="form-text text-danger" *ngIf="userRegistrationFormGroup.controls.PercentageOfMarks.errors && userRegistrationFormGroup.controls.PercentageOfMarks.errors.digit">{{userRegistrationFormGroup.controls.PercentageOfMarks.errors.digit.message}}<br/></small>
+</div>
+<button [disabled]="!userRegistrationFormGroup.valid" class="btn btn-primary">Submit</button>
+</form>

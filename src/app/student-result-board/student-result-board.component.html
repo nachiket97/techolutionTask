@@ -1,0 +1,35 @@
+
+  <div class="header">
+  <h1>Student Result Board</h1>
+</div>
+<div class="table-responsive">
+  <table class="table">
+    
+
+ 
+    
+    <thead class="thead-dark" style="width: 100%;">
+      <tr>
+          
+        <th scope="col">Student Name</th>
+        <th scope="col">Roll Number</th>
+        <th scope="col">Total Marks</th>
+        <th scope="col"></th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentData | sort:{property:'name',descending:false}">
+            <td [style.color] = " student.marks.Maths> 20 ? 'green' : 'red'">{{student.name | titlecase}}</td>
+            <td [style.color] = " student.marks.Maths  > 20 ? 'green' : 'red'">{{student.rollNumber}}</td>
+           
+            <td [style.color] = " student.marks.Maths  > 20 ? 'green' : 'red'" >{{getFinalScore(student)}}<td>
+                <td [style.color] = " student.marks.Maths  > 20 ? 'green' : 'red'">{{finalStatus(student)}}</td> 
+              
+          </tr>
+      
+         
+     </tbody>
+  </table>
+  </div>
+  

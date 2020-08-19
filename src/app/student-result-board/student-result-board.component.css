@@ -1,0 +1,11 @@
+h1 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+.thead-dark {
+    font-weight: bold;
+    font-style: italic;
+}
+table {
+    width:100%;
+}
